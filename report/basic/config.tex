@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+\usepackage{hyperref}
+\usepackage{ifxetex,ifluatex}
+\ifluatex
+  \usepackage{unicode-math}
+  \setmainfont{Times New Roman}
+  \setmathfont{XITS Math}
+\else\ifxetex
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{newtxtext,newtxmath}
+\fi\fi
+
+\usepackage{sectsty}
+\sectionfont{\fontsize{14}{16.8}\selectfont}
+\subsectionfont{\fontsize{13}{15.6}\selectfont}
+
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[portuguese]{babel}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Lista},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+\renewcommand\contentsname{Sumário}
+\title{Trabalho Computacional: Entrega 1 \\ Modelagem Matemática do Problema de Otimização}                  % Titulo
+\author{Gabriel Teixeira Lara Chaves \\ Pedro Barbosa Bahia}
+     % Autores
+\date{\today}                                       % Data
+
+\def\uname{Universidade Federal de Minas Gerais}    %Universidade
+\def\depart{Escola de Engenharia}                   %Departamento
+\def\materia{Teoria da Decisão}
+\def\turma{ELE088 - TCC}                                % Turma
+\def\email{2017088182 \\ 2018019907}     % Matricula
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+

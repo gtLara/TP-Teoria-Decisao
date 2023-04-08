@@ -1,0 +1,59 @@
+ \input{config}
+\begin{document}
+\sloppy
+\input{encadernacao}
+\newpage
+
+\section{Especificação do Problema}
+
+
+
+\section{Modelagem do Problema}
+
+O problema a ser modelado é de otimização sobre variáveis lógicas onde a
+variável de otimização descreve a atribuição de uma tarefa a um agente.
+
+\subsection{Definição da Variável de Otimização}
+
+As variável de otimização $\mathbf{x}$ é binária tal que
+
+$$ x_{ij} = \begin{cases} 1, \text{se a tarefa $j$ for atribuída ao agente $j$}
+                       \\ 0, \text{caso contrário}
+            \end{cases} $$
+
+\subsection{Função de Custo sobre Custo Total}
+
+A função de custo $f_C$, a ser minimizada, deve quantificar o custo total de
+realização de todas as tarefas.
+
+Definimos $f_C$ como a seguir
+
+$$ f_C(\mathbf{x}, \mathbf{c}) = \sum^{n}_{j=1}\sum^{m}_{i=1} c_{ij} x_{ij} $$
+
+\subsection{Função de Custo sobre Diferença no Consumo de Recursos}
+
+Definimos inicialmente uma função responsável por quantificar o consumo
+total de recursos por agente $i$, denominada $CRA_i$.
+
+$$ CRA_{i} (\mathbf{x}, \mathbf{a}) =  \sum^{n}_{j=1} a_{ij} x_{ij} $$
+
+Em seguida construímos a função para minimização da diferença do consumo de
+recursos entre o agente mais ocupado e o agente menos ocupado, $f_E$, como
+
+$$ f_E(\mathbf{x}, \mathbf{a}) = max(CRA(\mathbf{x}, \mathbf{a})) - min(CRA(\mathbf{x}, \mathbf{a}))$$
+
+\subsection{Restrições do Problema}
+
+\begin{enumerate}[label=(\roman*)]
+    \item Capacidade dos Agentes
+        $$ CRA_{i} (\mathbf{x}, \mathbf{a}) \leq b_i $$
+    \item Unicidade de Atribuição
+        $$\sum^{m}_{i=1} x_{ij} = 1 \forall j$$
+    \item Domínio de Variáveis
+        $$j \in \{1, ..., n\}$$
+        $$i \in \{1, ..., m\}$$
+        $$x_{ij} \in \{0, 1\}$$
+        $$a_{ij}, c_{ij}, b_i \in \mathbb{R}^{+}$$
+\end{enumerate}
+
+\end{document}
